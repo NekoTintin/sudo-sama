@@ -1,4 +1,5 @@
 from collections import deque
+from datetime import datetime
 import json
 import os
 
@@ -35,3 +36,15 @@ class ShortTermMemory():
 			"message": msg,
 			"timestamp": timestamp
 		})
+
+	def normalize_message_for_ai(self, channel_id: int) -> list:
+		if channel_id not in self.short_mem:
+			return []
+		
+		return [
+			{
+				"role": message["role"],
+				"content": f"{message['username']} {datetime.fromtimestamp(message['timestamp']).strftime('%H:%M')}: {message['message']}"
+			}
+			for message in self.short_mem[channel_id]
+		]
