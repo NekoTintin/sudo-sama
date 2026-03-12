@@ -3,7 +3,7 @@ from datetime import datetime
 import json
 import os
 
-MAX_MEM_SIZE = 10
+MAX_MEM_SIZE = 20
 
 class ShortTermMemory():
 
@@ -41,10 +41,10 @@ class ShortTermMemory():
 		if channel_id not in self.short_mem:
 			return []
 		
-		return [
-			{
-				"role": message["role"],
-				"content": f"{message['username']} {datetime.fromtimestamp(message['timestamp']).strftime('%H:%M')}: {message['message']}"
-			}
-			for message in self.short_mem[channel_id]
-		]
+		ctx = []
+		for msg in self.short_mem[channel_id]:
+			if msg["role"] == "assistant":
+				ctx.append({"role": "assistant", "content": msg["message"]})
+			else:
+				ctx.append({"role": "user", "content": f"{msg['username']} a dit : {msg['message']}"})
+		return (ctx)

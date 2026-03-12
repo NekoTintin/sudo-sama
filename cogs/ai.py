@@ -28,6 +28,14 @@ class AI(commands.Cog):
 		if self.bot.user.mentioned_in(msg):
 			async with msg.channel.typing():
 				ctx = self.short_mem.normalize_message_for_ai(msg.channel.id)
+
+
+				print(f"\n--- [ ENTRÉE IA POUR {msg.channel.id} ] ---")
+				for m in ctx:
+					role_icon = "👤" if m['role'] == 'user' else "🤖"
+					print(f"{role_icon} {m['role'].upper()}: {m['content']}")
+				print("-------------------------------------------\n")
+
 				try:
 					resp = await asyncio.to_thread(
 						ollama.chat,
@@ -45,7 +53,7 @@ class AI(commands.Cog):
 					await msg.reply(answer)
 				except Exception as e:
 					print(f"Error generating response: {e}")
-					await msg.reply("Désolé, je ne peux pas réponde maintenant.")
+					await msg.reply("Désolée, je ne peux pas réponde maintenant.")
 
 
 async def setup(bot):

@@ -24,6 +24,7 @@ class SudoSama(commands.Bot):
 	
 	async def on_ready(self):
 		print(f"Logged in as {self.user} (ID: {self.user.id})")
+		await self.change_presence(activity=discord.CustomActivity(name="Gardienne du Kernel"))
 
 async def start():
 	bot = SudoSama()
