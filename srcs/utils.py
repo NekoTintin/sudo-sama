@@ -4,17 +4,20 @@ import gettext
 import locale
 import shutil
 from dotenv import load_dotenv
+import builtins
 
-def _(message: str) -> str:
-	"""Fonction de traduction (remplacée par gettext.translation.install())"""
-	return message
+# Stop VScode warnings
+if not hasattr(builtins, "_"):
+	_ = lambda s: s
 
 def reset_all():
 	print(_("reset_all_warning"))
 
 	if (input() == "YES"):
-		shutil.rmtree("data/")
-		sys.exit(0)
+		print(_("reset_all_ask_again"))
+		if (input() == "YES I WILL DO IT"):
+			shutil.rmtree("data/")
+			sys.exit(0)
 	sys.exit(_("reset_all_cancelled"))
 
 def no_dotenv_error() -> None:

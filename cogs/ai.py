@@ -1,9 +1,14 @@
 from discord.ext import commands
-from srcs.short_term_memory import ShortTermMemory
+#from srcs.short_term_memory import ShortTermMemory // for later
 import ollama
 import time
 import os
 import asyncio
+import builtins
+
+# Stop VScode warnings
+if not hasattr(builtins, "_"):
+	_ = lambda s: s
 
 class AI(commands.Cog):
 
@@ -54,8 +59,8 @@ class AI(commands.Cog):
 					)
 					await msg.reply(answer)
 				except Exception as e:
-					print(f"Erreur de génération de la réponse: {e}")
-					await msg.reply("Désolée, je ne peux pas réponde maintenant.")
+					print(_("generating_error") + f"{e}")
+					await msg.reply(_("generating_error_resp"))
 
 
 async def setup(bot):

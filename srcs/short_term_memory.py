@@ -1,8 +1,11 @@
 from collections import deque
-from datetime import datetime
 import json
 import os
-from utils import _
+import builtins
+
+# Stop VScode warnings
+if not hasattr(builtins, "_"):
+	_ = lambda s: s
 
 MAX_MEM_SIZE = 20
 
@@ -20,7 +23,7 @@ class ShortTermMemory():
 					with open(os.path.join(self.dir, file), "r") as f:
 						self.short_mem[int(file[:-5])] = deque(json.load(f), maxlen=MAX_MEM_SIZE)
 		except json.JSONDecodeError as e:
-			print(_("json_load_error").format(file=file, error=str(e)))
+			print(_("json_load_error") + f"{file}: {e}")
 
 	def save_all(self) -> None:
 		for channel_id, msg in self.short_mem.items():

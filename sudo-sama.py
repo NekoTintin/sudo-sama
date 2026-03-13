@@ -2,9 +2,14 @@ import discord
 import asyncio
 from discord.ext import commands
 import os
+import builtins
 
 from srcs.short_term_memory import ShortTermMemory
-import srcs.utils as utils
+from srcs.utils import setup_i18n, error_management
+
+# Stop VScode warnings
+if not hasattr(builtins, "_"):
+	_ = lambda s: s
 
 class SudoSama(commands.Bot):
 
@@ -20,12 +25,13 @@ class SudoSama(commands.Bot):
 				try:
 					await self.load_extension(f"cogs.{file[:-3]}")
 				except Exception as e:
-					print(f"Impossible de charger {file}: {e}")
+					print(_("cog_load_error"))
+					print(f"{file}: {e}")
 					return
 	
 	async def on_ready(self):
-		print(f"Connecté en tant que {self.user} (ID: {self.user.id})")
-		await self.change_presence(activity=discord.CustomActivity(name="Gardienne du Kernel"))
+		print(_("ready_msg") + str(self.user) + " " + f"(ID: {self.user.id})")
+		await self.change_presence(activity=discord.CustomActivity(name=_("discord_activity")))
 
 async def start():
 	bot = SudoSama()
@@ -38,8 +44,8 @@ async def start():
 		bot.short_mem.save_all()
 
 if __name__ == "__main__":
-	utils.setup_i18n()
-	utils.error_management()
+	setup_i18n()
+	error_management()
 	os.makedirs("data/", exist_ok=True)
 	try:
 		asyncio.run(start())

@@ -42,3 +42,9 @@ msgstr "Error loading .env file."
 
 msgid "help_message"
 msgstr "Usage: python sudo-sama.py [OPTIONS]\n\nOptions:\n  --reset    Reset all data\n  --help     Show this help message"
+
+msgid "json_load_error"
+msgstr "Error loading JSON file: "
+
+msgid "reset_all_ask_again"
+msgstr "Are you really sure you want to do this? This action is irreversible. (YES I WILL DO IT to confirm)"

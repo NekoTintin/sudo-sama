@@ -42,3 +42,9 @@ msgstr "Erreur lors du chargement du fichier .env."
 
 msgid "help_message"
 msgstr "Utilisation: python sudo-sama.py [OPTIONS]\n\nOptions:\n  --reset    Réinitialiser toutes les données\n  --help     Afficher ce message d'aide"
+
+msgid "json_load_error"
+msgstr "Erreur lors du chargement du fichier JSON: "
+
+msgid "reset_all_ask_again"
+msgstr "Êtes-vous vraiment sûr de vouloir faire cela? Cette action est irréversible. (YES I WILL DO IT pour confirmer)"
