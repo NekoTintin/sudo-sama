@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Check python installation
 if ! command -v python3 &> /dev/null
@@ -15,11 +16,10 @@ source ".venv/bin/activate"
 
 # Check deps
 pip install --upgrade pip
-pip install -r --r requirements.txt
+pip install -r requirements.txt
 
 # Compiling translations
-msgfmt locale/en/LC_MESSAGES/en.po -o locale/en/LC_MESSAGES/en.mo
-msgfmt locale/fr/LC_MESSAGES/fr.po -o locale/fr/LC_MESSAGES/fr.mo
+bash compile_translations.sh
 
 # Start
 python3 sudo-sama.py

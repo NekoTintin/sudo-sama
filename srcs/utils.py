@@ -22,10 +22,20 @@ def reset_all():
 
 def no_dotenv_error() -> None:
 	print(_("no_dotenv_error"))
+
+	token = input(_("insert_discord_token"))
+	if token == None:
+		print(_("no_token_provided"))
+		sys.exit(1)
+	model = input(_("insert_model"))
+	if model == None:
+		print(_("no_model_provided"))
+		sys.exit(1)
+
 	with open(".env", "w") as env_file:
-		env_file.write('CLIENT_TOKEN = ""')
+		env_file.write(f'CLIENT_TOKEN = "{token}"')
 		env_file.write('\n\n')
-		env_file.write('MODEL = ""')
+		env_file.write(f'MODEL = "{model}"')
 	sys.exit(1)
 
 def dotenv_error() -> None:
@@ -41,14 +51,19 @@ def setup_i18n(language: str = None) -> None:
 		system_lang = locale.getlocale()[0]
 		lang = system_lang.split("_")[0] if system_lang else "en"
 		language = lang if lang in ["en", "fr"] else "en"
+
+	localedir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "locale")
+
 	try:
 		translation = gettext.translation(
 			language,
-			localedir=os.path.join(os.path.dirname(os.path.dirname(__file__)), "locale"),
+			localedir=localedir,
 			languages=[language],
-			fallback=True
+			fallback=False
 		)
-		translation.install()
+		# Installer manuellement _ dans les builtins
+		import builtins
+		builtins._ = translation.gettext
 	except Exception as e:
 		print(f"Error when loading translations: {e}")
 		sys.exit(1)

@@ -44,7 +44,7 @@ async def start():
 		bot.short_mem.save_all()
 
 if __name__ == "__main__":
-	setup_i18n()
+	setup_i18n("en")
 	error_management()
 	os.makedirs("data/", exist_ok=True)
 	try:

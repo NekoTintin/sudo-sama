@@ -35,7 +35,7 @@ msgid "reset_all_cancelled"
 msgstr "Réinitialisation annulée."
 
 msgid "no_dotenv_error"
-msgstr "Le fichier .env a été créé, veuillez le remplir avec les valeurs nécessaires."
+msgstr "Le fichier .env va être créé."
 
 msgid "dotenv_load_error"
 msgstr "Erreur lors du chargement du fichier .env."
@@ -48,3 +48,15 @@ msgstr "Erreur lors du chargement du fichier JSON: "
 
 msgid "reset_all_ask_again"
 msgstr "Êtes-vous vraiment sûr de vouloir faire cela? Cette action est irréversible. (YES I WILL DO IT pour confirmer)"
+
+msgid "insert_discord_token"
+msgstr "Veuillez insérer votre token Discord: "
+
+msgid "no_token_provided"
+msgstr "Aucun token fourni. Arrêt du programme..."
+
+msgid "insert_model"
+msgstr "Veuillez insérer le modèle que vous souhaitez utiliser (ex: gpt-3.5-turbo): "
+
+msgid "no_model_provided"
+msgstr "Aucun modèle fourni. Arrêt du programme..."

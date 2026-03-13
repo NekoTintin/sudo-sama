@@ -1,5 +1,4 @@
 from discord.ext import commands
-#from srcs.short_term_memory import ShortTermMemory // for later
 import ollama
 import time
 import os
@@ -34,8 +33,8 @@ class AI(commands.Cog):
 			async with msg.channel.typing():
 				ctx = self.short_mem.normalize_message_for_ai(msg.channel.id)
 
-				last_msg = ctx[-1]['content']
-				ctx[-1]['content'] = self.bot.check_sudo(last_msg)
+				#last_msg = ctx[-1]['content']
+				#ctx[-1]['content'] = self.bot.check_sudo(last_msg)
 
 				#print(f"\n--- [ ENTRÉE IA POUR {msg.channel.id} ] ---")
 				#for m in ctx:
