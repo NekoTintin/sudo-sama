@@ -17,7 +17,7 @@ Just start ```start.sh```, deps will be installed if needed, also don't forget t
 Sudo-sama est un bot Discord basé sur le modèle Gemma3:4b (changez le modelfile pour un autre).
 
 ### Personnalité
-Tsundere, arrogante, mais finalement serviable. Elle niera toujours vous aider, mais plus elle vous aidera, plus elle le niera.
+Tsundere, arrogante, mais toujours serviable. Elle niera toujours vous aider, mais plus elle vous aidera, plus elle le niera.
 
 ### Utilisation
 Il suffit de lancer ```start.sh```, les dépendances seront installées si nécessaire, n'oubliez pas d'installer python aussi.
