@@ -41,4 +41,4 @@ msgid "dotenv_load_error"
 msgstr "Erreur lors du chargement du fichier .env."
 
 msgid "help_message"
-msgstr "Utilisation: python sudo-sama.py [OPTIONS]\n\nOptions:\n  --reset    Réinitialiser toutes les données\n  --help     Afficher ce message d'aide\n"
+msgstr "Utilisation: python sudo-sama.py [OPTIONS]\n\nOptions:\n  --reset    Réinitialiser toutes les données\n  --help     Afficher ce message d'aide"

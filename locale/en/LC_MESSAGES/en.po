@@ -35,10 +35,10 @@ msgid "reset_all_cancelled"
 msgstr "Reset cancelled."
 
 msgid "no_dotenv_error"
-msgstr "The .env file has been created, please fill it with the necessary values.
+msgstr "The .env file has been created, please fill it with the necessary values."
 
 msgid "dotenv_load_error"
 msgstr "Error loading .env file."
 
 msgid "help_message"
-msgstr "Usage: python sudo-sama.py [OPTIONS]\n\nOptions:\n  --reset    Reset all data\n  --help
+msgstr "Usage: python sudo-sama.py [OPTIONS]\n\nOptions:\n  --reset    Reset all data\n  --help     Show this help message"

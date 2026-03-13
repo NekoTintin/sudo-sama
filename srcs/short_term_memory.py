@@ -2,6 +2,7 @@ from collections import deque
 from datetime import datetime
 import json
 import os
+from utils import _
 
 MAX_MEM_SIZE = 20
 
@@ -19,7 +20,7 @@ class ShortTermMemory():
 					with open(os.path.join(self.dir, file), "r") as f:
 						self.short_mem[int(file[:-5])] = deque(json.load(f), maxlen=MAX_MEM_SIZE)
 		except json.JSONDecodeError as e:
-			print(f"Error loading short term memory: {e}")
+			print(_("json_load_error").format(file=file, error=str(e)))
 
 	def save_all(self) -> None:
 		for channel_id, msg in self.short_mem.items():
@@ -46,5 +47,5 @@ class ShortTermMemory():
 			if msg["role"] == "assistant":
 				ctx.append({"role": "assistant", "content": msg["message"]})
 			else:
-				ctx.append({"role": "user", "content": f"{msg['username']} a dit : {msg['message']}"})
+				ctx.append({"role": "user", "content": f"{msg['username']} : {msg['message']}"})
 		return (ctx)

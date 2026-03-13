@@ -2,8 +2,9 @@ import discord
 import asyncio
 from discord.ext import commands
 import os
-from dotenv import load_dotenv
+
 from srcs.short_term_memory import ShortTermMemory
+import srcs.utils as utils
 
 class SudoSama(commands.Bot):
 
@@ -19,11 +20,11 @@ class SudoSama(commands.Bot):
 				try:
 					await self.load_extension(f"cogs.{file[:-3]}")
 				except Exception as e:
-					print(f"Failed to load {file}: {e}")
+					print(f"Impossible de charger {file}: {e}")
 					return
 	
 	async def on_ready(self):
-		print(f"Logged in as {self.user} (ID: {self.user.id})")
+		print(f"Connecté en tant que {self.user} (ID: {self.user.id})")
 		await self.change_presence(activity=discord.CustomActivity(name="Gardienne du Kernel"))
 
 async def start():
@@ -37,7 +38,8 @@ async def start():
 		bot.short_mem.save_all()
 
 if __name__ == "__main__":
-	load_dotenv()
+	utils.setup_i18n()
+	utils.error_management()
 	os.makedirs("data/", exist_ok=True)
 	try:
 		asyncio.run(start())

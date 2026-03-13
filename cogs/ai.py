@@ -29,12 +29,14 @@ class AI(commands.Cog):
 			async with msg.channel.typing():
 				ctx = self.short_mem.normalize_message_for_ai(msg.channel.id)
 
+				last_msg = ctx[-1]['content']
+				ctx[-1]['content'] = self.bot.check_sudo(last_msg)
 
-				print(f"\n--- [ ENTRÉE IA POUR {msg.channel.id} ] ---")
-				for m in ctx:
-					role_icon = "👤" if m['role'] == 'user' else "🤖"
-					print(f"{role_icon} {m['role'].upper()}: {m['content']}")
-				print("-------------------------------------------\n")
+				#print(f"\n--- [ ENTRÉE IA POUR {msg.channel.id} ] ---")
+				#for m in ctx:
+				#	role_icon = "👤" if m['role'] == 'user' else "🤖"
+				#	print(f"{role_icon} {m['role'].upper()}: {m['content']}")
+				#print("-------------------------------------------\n")
 
 				try:
 					resp = await asyncio.to_thread(
@@ -52,7 +54,7 @@ class AI(commands.Cog):
 					)
 					await msg.reply(answer)
 				except Exception as e:
-					print(f"Error generating response: {e}")
+					print(f"Erreur de génération de la réponse: {e}")
 					await msg.reply("Désolée, je ne peux pas réponde maintenant.")
 
 
