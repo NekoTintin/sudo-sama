@@ -1,0 +1,44 @@
+# English translations
+# Copyright (C) 2026
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "discord_activity"
+msgstr "Guardian of the Kernel"
+
+msgid "failed_to_load_cogs"
+msgstr "Cannot load"
+
+msgid "ready_msg"
+msgstr "Connected as "
+
+msgid "unknown_arg"
+msgstr "Unknown argument."
+
+msgid "generating_error"
+msgstr "Error generating response: "
+
+msgid "generating_error_resp"
+msgstr "Sorry, I can't answer right now."
+
+msgid "short_term_error"
+msgstr "Error managing short-term memory: "
+
+msgid "reset_all_warning"
+msgstr "This will reset all data, including short-term and long-term memory and conversation history. Are you sure you want to continue? (YES/NO)"
+
+msgid "reset_all_cancelled"
+msgstr "Reset cancelled."
+
+msgid "no_dotenv_error"
+msgstr "The .env file has been created, please fill it with the necessary values.
+
+msgid "dotenv_load_error"
+msgstr "Error loading .env file."
+
+msgid "help_message"
+msgstr "Usage: python sudo-sama.py [OPTIONS]\n\nOptions:\n  --reset    Reset all data\n  --help

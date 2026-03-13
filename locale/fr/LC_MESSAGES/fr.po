@@ -1,0 +1,44 @@
+# French translations
+# Copyright (C) 2026
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "discord_activity"
+msgstr "Gardienne du Kernel"
+
+msgid "failed_to_load_cogs"
+msgstr "Impossible de charger"
+
+msgid "ready_msg"
+msgstr "Connecté en tant que "
+
+msgid "unknown_arg"
+msgstr "Argument inconnu."
+
+msgid "generating_error"
+msgstr "Erreur lors de la génération de la réponse: "
+
+msgid "generating_error_resp"
+msgstr "Désolée, je ne peux pas répondre en ce moment."
+
+msgid "short_term_error"
+msgstr "Erreur lors de la gestion de la mémoire court terme: "
+
+msgid "reset_all_warning"
+msgstr "Cela réinitialisera toutes les données, y compris la mémoire court terme et long terme, et l'historique des conversations. Êtes-vous sûr de vouloir continuer? (YES/NO)"
+
+msgid "reset_all_cancelled"
+msgstr "Réinitialisation annulée."
+
+msgid "no_dotenv_error"
+msgstr "Le fichier .env a été créé, veuillez le remplir avec les valeurs nécessaires."
+
+msgid "dotenv_load_error"
+msgstr "Erreur lors du chargement du fichier .env."
+
+msgid "help_message"
+msgstr "Utilisation: python sudo-sama.py [OPTIONS]\n\nOptions:\n  --reset    Réinitialiser toutes les données\n  --help     Afficher ce message d'aide\n"
