@@ -7,9 +7,9 @@ import builtins
 from srcs.short_term_memory import ShortTermMemory
 from srcs.utils import setup_i18n, error_management
 
-# Stop VScode warnings
+# Stop VScode warnings - define a placeholder that will be overridden
 if not hasattr(builtins, "_"):
-	_ = lambda s: s
+	builtins._ = lambda s: s
 
 class SudoSama(commands.Bot):
 

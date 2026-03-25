@@ -13,6 +13,9 @@ msgstr "Guardian of the Kernel"
 msgid "failed_to_load_cogs"
 msgstr "Cannot load"
 
+msgid "cog_load_error"
+msgstr "Error loading cog: "
+
 msgid "ready_msg"
 msgstr "Connected as "
 

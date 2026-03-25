@@ -8,7 +8,7 @@ import builtins
 
 # Stop VScode warnings
 if not hasattr(builtins, "_"):
-	_ = lambda s: s
+	builtins._ = lambda s: s
 
 def reset_all():
 	print(_("reset_all_warning"))
@@ -59,14 +59,16 @@ def setup_i18n(language: str = None) -> None:
 			language,
 			localedir=localedir,
 			languages=[language],
-			fallback=False
+			fallback=True
 		)
-		# Installer manuellement _ dans les builtins
 		import builtins
 		builtins._ = translation.gettext
+		builtins._translation = translation
 	except Exception as e:
 		print(f"Error when loading translations: {e}")
-		sys.exit(1)
+		import builtins
+		builtins._ = lambda s: s
+		builtins._translation = None
 
 def error_management() -> None:
 	if len(sys.argv) > 1:

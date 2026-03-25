@@ -5,7 +5,7 @@ import builtins
 
 # Stop VScode warnings
 if not hasattr(builtins, "_"):
-	_ = lambda s: s
+	builtins._ = lambda s: s
 
 MAX_MEM_SIZE = 20
 

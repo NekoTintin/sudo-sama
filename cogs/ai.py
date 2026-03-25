@@ -7,7 +7,7 @@ import builtins
 
 # Stop VScode warnings
 if not hasattr(builtins, "_"):
-	_ = lambda s: s
+	builtins._ = lambda s: s
 
 class AI(commands.Cog):
 

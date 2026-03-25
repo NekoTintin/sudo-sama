@@ -13,6 +13,9 @@ msgstr "Gardienne du Kernel"
 msgid "failed_to_load_cogs"
 msgstr "Impossible de charger"
 
+msgid "cog_load_error"
+msgstr "Erreur lors du chargement du cog: "
+
 msgid "ready_msg"
 msgstr "Connecté en tant que "
 
