@@ -63,3 +63,9 @@ msgstr "Please insert the model you want to use (e.g., gpt-3.5-turbo): "
 
 msgid "no_model_provided"
 msgstr "No model provided. Exiting."
+
+msgid "insert_in_chromadb"
+msgstr "Add a memory to ChromaDB: "
+
+msgid "fact_already_exists"
+msgstr "This fact already exists in the database: "

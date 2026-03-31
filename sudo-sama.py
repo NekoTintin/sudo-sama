@@ -5,6 +5,7 @@ import os
 import builtins
 
 from srcs.short_term_memory import ShortTermMemory
+from srcs.long_term_memory import LongTermMemory
 from srcs.utils import setup_i18n, error_management
 
 # Stop VScode warnings - define a placeholder that will be overridden
@@ -18,6 +19,7 @@ class SudoSama(commands.Bot):
 		super().__init__(command_prefix="!", intents=self._intents)
 		self.short_mem = ShortTermMemory()
 		self.short_mem.load_all()
+		self.long_mem = LongTermMemory()
 
 	async def setup_hook(self):
 		for file in os.listdir("cogs"):

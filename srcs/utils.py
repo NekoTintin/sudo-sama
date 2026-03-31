@@ -50,7 +50,7 @@ def setup_i18n(language: str = None) -> None:
 	if language is None:
 		system_lang = locale.getlocale()[0]
 		lang = system_lang.split("_")[0] if system_lang else "en"
-		language = lang if lang in ["en", "fr"] else "en"
+		language = lang if lang in ["en", "fr"] else "fr"
 
 	localedir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "locale")
 

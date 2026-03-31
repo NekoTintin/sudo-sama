@@ -1,11 +1,6 @@
 from collections import deque
 import json
 import os
-import builtins
-
-# Stop VScode warnings
-if not hasattr(builtins, "_"):
-	builtins._ = lambda s: s
 
 MAX_MEM_SIZE = 20
 
@@ -46,9 +41,13 @@ class ShortTermMemory():
 			return []
 		
 		ctx = []
+		idx = 0
 		for msg in self.short_mem[channel_id]:
+			if idx >= 6:
+				break;
 			if msg["role"] == "assistant":
 				ctx.append({"role": "assistant", "content": msg["message"]})
 			else:
 				ctx.append({"role": "user", "content": f"{msg['username']} : {msg['message']}"})
+			idx += 1
 		return (ctx)

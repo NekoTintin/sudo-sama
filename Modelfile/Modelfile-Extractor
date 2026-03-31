@@ -25,6 +25,7 @@ SYSTEM """
 	Si l'utilisateur interpelle quelqu'un ("Hé Damien..."), ne mémorise pas que l'utilisateur est cette personne.
 	Ignore les intéractions avec les autres personnes, sauf si elles révèlent des faits sur l'utilisateur lui-même.
 	Ignore les informations publiques, concentre-toi sur le privé/technique.
+	Ignore les questions de l'utilisateur si elles ne révèlent pas de faits sur lui.
 
 	Si aucun fait sur l'utilisateur ou son matériel n'est présent, répond simplement 'RIEN'.
 """

@@ -63,3 +63,9 @@ msgstr "Veuillez insérer le modèle que vous souhaitez utiliser (ex: gpt-3.5-tu
 
 msgid "no_model_provided"
 msgstr "Aucun modèle fourni. Arrêt du programme..."
+
+msgid "insert_in_chromadb"
+msgstr "Ajouter une information sur ChromaDB: "
+
+msgid "fact_already_exists"
+msgstr "Cette information existe déjà dans la base de données: "
